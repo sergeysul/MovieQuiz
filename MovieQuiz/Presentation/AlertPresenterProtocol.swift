@@ -1,8 +1,6 @@
-//
-//  AlertPresenterProtocol.swift
-//  MovieQuiz
-//
-//  Created by Сергей Сулятецкий on 08.06.2024.
-//
-
 import Foundation
+import UIKit
+
+protocol AlertPresenterProtocol: UIViewController{
+    func showNextQuestionOrResults()
+}
