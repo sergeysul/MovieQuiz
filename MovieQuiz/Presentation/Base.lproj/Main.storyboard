@@ -25,6 +25,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7yb-aC-9OY">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tSf-pY-fLf">
                                 <rect key="frame" x="20" y="58" width="374" height="804"/>
                                 <subviews>
@@ -116,12 +119,15 @@
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="tSf-pY-fLf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="b0V-A7-Bqr"/>
+                            <constraint firstItem="7yb-aC-9OY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cn0-ZM-Mz7"/>
                             <constraint firstItem="tSf-pY-fLf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="d2S-1X-9up"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tSf-pY-fLf" secondAttribute="trailing" constant="20" id="mSr-fS-YLP"/>
+                            <constraint firstItem="7yb-aC-9OY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nan-WH-UKJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tSf-pY-fLf" secondAttribute="bottom" id="vc5-F4-E9Q"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="7yb-aC-9OY" id="1H2-z5-xx5"/>
                         <outlet property="counterLabel" destination="ijh-K4-Aqf" id="7gz-l7-zPq"/>
                         <outlet property="imageView" destination="BBZ-TM-Geq" id="FXw-tT-jjd"/>
                         <outlet property="textLabel" destination="q29-BD-awJ" id="4Gx-8R-csh"/>
