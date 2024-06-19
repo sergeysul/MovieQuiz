@@ -29,6 +29,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
       imageView.image = step.image
       textLabel.text = step.question
       counterLabel.text = step.questionNumber
+      hideLoadingIndicator()
     }
     
     private func show(quiz result: QuizResultsViewModel) {
@@ -42,8 +43,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
             
             self.currentQuestionIndex = 0
             self.correctAnswers = 0
-            
-            questionFactory?.requestNextQuestion()
+            self.showLoadingIndicator()
+            self.questionFactory?.requestNextQuestion()
         }
         //DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             //guard let self = self else {return}
@@ -110,6 +111,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
             correctAnswers = 0
         } else {
             currentQuestionIndex += 1
+            self.showLoadingIndicator()
             self.questionFactory?.requestNextQuestion()
         }
     }
@@ -117,7 +119,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = 20
         questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         statisticService = StatisticService()
 
